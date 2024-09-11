@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+
+  ros2_simple_pub:
+    image: ros2_pub:humble
+    container_name: publisher
+    networks:
+          - my_network
+    environment:
+      - ROS_DOMAIN_ID=0
+      - ROS_LOCALHOST_ONLY=1
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: "1.0"
+
+  ros2_simple_sub:
+    image: ros2_sub:humble
+    container_name: subscriber
+    networks:
+          - my_network
+    environment:
+      - ROS_DOMAIN_ID=0
+      - ROS_LOCALHOST_ONLY=1
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: "1.0"
+
+networks:
+  my_network:
+    driver: bridge
