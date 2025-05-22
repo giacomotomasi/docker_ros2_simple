@@ -7,7 +7,7 @@ services:
           - my_network
     environment:
       - ROS_DOMAIN_ID=0
-      - ROS_LOCALHOST_ONLY=1
+      # - ROS_LOCALHOST_ONLY=1
     deploy:
       resources:
         limits:
@@ -21,7 +21,7 @@ services:
           - my_network
     environment:
       - ROS_DOMAIN_ID=0
-      - ROS_LOCALHOST_ONLY=1
+      # - ROS_LOCALHOST_ONLY=1
     deploy:
       resources:
         limits:
